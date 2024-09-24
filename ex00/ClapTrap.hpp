@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:46:49 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/24 19:05:03 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:26:14 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,24 @@ public:
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
+	bool isAlive() const;
+	bool hasEnoughEnergy(uint requiredEnergy) const;
+
+	/* --------------------------------- Getters -------------------------------- */
+	std::string getName() const;
+	int getHitpoints() const;
+	int getEnergyPoints() const;
+	int getAttackDamage() const;
+
+	/* --------------------------------- Setters -------------------------------- */
+	void setName(std::string name);
+	void setHitpoints(int hitpoints);
+	void setEnergyPoints(int energyPoints);
+	void setAttackDamage(int attackDamage);
+
 private:
 	std::string _name;
-	int _hitpoints;
-	int _energyPoints;
-	int _attackDamage;
+	uint _hitpoints = 10;
+	uint _energyPoints = 10;
+	uint _attackDamage = 0;
 };

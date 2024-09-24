@@ -6,7 +6,7 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 17:41:48 by mstrauss          #+#    #+#              #
-#    Updated: 2024/09/24 18:45:40 by mstrauss         ###   ########.fr        #
+#    Updated: 2024/09/24 20:28:36 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ INC			=   -I$(CURDIR)
 vpath %.hpp includes
 
 SRC 		=	main.cpp\
-				Fixed.cpp
+				ClapTrap.cpp
 				
-HEADER		=	Fixed.hpp 
+HEADER		=	ClapTrap.hpp 
 
 OBJ_DIR		=	./obj
 OBJ 		=	$(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
