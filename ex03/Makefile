@@ -6,7 +6,7 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 17:41:48 by mstrauss          #+#    #+#              #
-#    Updated: 2024/09/30 13:51:40 by mstrauss         ###   ########.fr        #
+#    Updated: 2024/09/30 15:49:39 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,17 @@ NAME		=	diamondtrap
 
 CC			=	c++
 CFLAGS		=	-Wall -Werror -Wextra -std=c++17 -stdlib=libc++
-INC			=   -I$(CURDIR)
 
 SRC 		=	main.cpp\
-				ClapTrap.cpp\
-				ScavTrap.cpp\
-				FragTrap.cpp\
+                ClapTrap.cpp\
+                ScavTrap.cpp\
+                FragTrap.cpp\
 				DiamondTrap.cpp
-				
+                
 HEADER		=	ClapTrap.hpp\
-				ScavTrap.hpp\
-				Fragtrap.hpp\
-				Diamondtrap.hpp
+                ScavTrap.hpp\
+                FragTrap.hpp\
+				DiamondTrap.hpp
 
 OBJ_DIR		=	./obj
 OBJ 		=	$(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
@@ -35,19 +34,19 @@ RM			=	rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: %.cpp $(HEADER) | $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+	mkdir -p $(OBJ_DIR)
 
 clean:
-	@$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

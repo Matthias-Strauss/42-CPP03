@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:56:14 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 15:31:19 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 14:31:16 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
-	_hitpoints = 100;
-	_energyPoints = 100;
-	_attackDamage = 30;
+	_hitpoints = src._hitpoints;
+	_energyPoints = src._energyPoints;
+	_attackDamage = src._attackDamage;
 	std::cout << "Copy constructor called: " << "FragTrap " << this->_name << " is cloned!" << std::endl;
 }
 
