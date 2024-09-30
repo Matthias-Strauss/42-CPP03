@@ -6,9 +6,14 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:46:49 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/24 19:26:14 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:25:17 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 #include <string>
@@ -51,3 +56,5 @@ private:
 	uint _energyPoints = 10;
 	uint _attackDamage = 0;
 };
+
+#endif

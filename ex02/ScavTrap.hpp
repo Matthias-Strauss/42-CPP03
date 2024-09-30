@@ -6,9 +6,14 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 20:37:05 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/25 14:59:37 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:26:07 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 #include <iostream>
@@ -32,3 +37,5 @@ public:
 
 private:
 };
+
+#endif

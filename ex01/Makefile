@@ -6,7 +6,7 @@
 #    By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 17:41:48 by mstrauss          #+#    #+#              #
-#    Updated: 2024/09/24 21:07:29 by mstrauss         ###   ########.fr        #
+#    Updated: 2024/09/30 13:47:39 by mstrauss         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ_DIR)/%.o: %.cpp $(OBJ_DIR)
+$(OBJ_DIR)/%.o: %.cpp $(HEADER) | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 $(OBJ_DIR):

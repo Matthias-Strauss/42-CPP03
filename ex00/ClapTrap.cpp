@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:46:48 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/24 20:33:57 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 02:13:43 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,14 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string &target)
 {
-	if (!this->isAlive() || !this->hasEnoughEnergy(1))
+	if (!this->isAlive())
 	{
-		std::cout << "ClapTrap " << this->_name << " is dead!" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " is out of health!" << std::endl;
+		return;
+	}
+	if (!this->hasEnoughEnergy(1))
+	{
+		std::cout << "ClapTrap " << this->_name << " is out of energy!" << std::endl;
 		return;
 	}
 	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
@@ -68,9 +73,14 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (!this->isAlive() || !this->hasEnoughEnergy(1))
+	if (!this->isAlive())
 	{
-		std::cout << "ClapTrap " << this->_name << " refuses to take any more damage. He's dead and doesn't have time for this anymore! Or he's just exhausted, I can never tell with him." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " is out of health!" << std::endl;
+		return;
+	}
+	if (!this->hasEnoughEnergy(1))
+	{
+		std::cout << "ClapTrap " << this->_name << " is out of energy!" << std::endl;
 		return;
 	}
 	this->setHitpoints(this->getHitpoints() - amount);
@@ -79,11 +89,17 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount) // ADD CHECK TO NOT EXCEED MAX HITPOINTS
 {
-	if (!this->isAlive() || !this->hasEnoughEnergy(1))
+	if (!this->isAlive())
 	{
-		std::cout << "ClapTrap " << this->_name << " can't be repaired, dummy! HE'S DEAD! Or just out of energy. Who knows?" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " is out of health!" << std::endl;
 		return;
 	}
+	if (!this->hasEnoughEnergy(1))
+	{
+		std::cout << "ClapTrap " << this->_name << " is out of energy!" << std::endl;
+		return;
+	}
+	// no check for max health, who says a claptrap can't improve on its design?
 	this->setHitpoints(this->getHitpoints() + amount);
 	_energyPoints -= 1;
 
