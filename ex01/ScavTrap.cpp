@@ -6,7 +6,7 @@
 /*   By: mstrauss <mstrauss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 20:37:13 by mstrauss          #+#    #+#             */
-/*   Updated: 2024/09/24 21:04:38 by mstrauss         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:19:59 by mstrauss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
-	_hitpoints = 100; // DO THESE NEED TO BE OVERRIDDEN OR NOT?
-	_energyPoints = 50;
-	_attackDamage = 20;
+	// _hitpoints = 100; // DO THESE NEED TO BE OVERRIDDEN OR NOT?
+	// _energyPoints = 50;
+	// _attackDamage = 20;
 	std::cout << "Copy constructor called: " << "ScavTrap " << this->_name << " is cloned!" << std::endl;
 }
 
@@ -67,12 +67,12 @@ void ScavTrap::attack(const std::string &target)
 		std::cout << "ScavTrap " << this->_name << " is dead!" << std::endl;
 		return;
 	}
-	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of DAMAGE!" << std::endl;
 	_energyPoints -= 1;
 	// target.takeDamage(this->_attackDamage);
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!" << std::endl;
+	std::cout << "ScavTrap " << _name << " is now in GATE KEEPER MODE!!" << std::endl;
 }
